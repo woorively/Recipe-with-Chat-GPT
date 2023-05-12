@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Recipe Generator</title>
+  <link rel="icon" href="{% static 'favicon.png' %}" type="image/png">
+  <!-- <link rel="stylesheet" type="text/css" href="css/index.css"> -->
+</head>
+<body>
+  <div class="container">
+    <form method="POST" action="{% url 'recipe_generator' %}">
+      {% csrf_token %}
+      <label for="ingredients">식재료를 입력해주세요: </label>
+      <input type="text" id="ingredients" name="ingredients">
+      <input type="submit" value="레시피 보기">
+    </form>
+  </div>
+</body>
+</html>
