@@ -4,17 +4,24 @@
 <head>
   <meta charset="UTF-8">
   <title>Recipe Generator</title>
-  <link rel="icon" href="{% static 'favicon.png' %}" type="image/png">
+  <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/png">
   <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+  <script>
+        function showLoadingImage() {
+            var loadingImage = document.getElementById('loading-image');
+            loadingImage.style.display = 'block';
+        }
+    </script>
 </head>
 <body>
   <div class="container">
-    <form method="POST" action="{% url 'recipe_generator' %}">
+    <form method="POST" action="{% url 'recipe_generator' %}" onsubmit="showLoadingImage()">
       {% csrf_token %}
       <label for="ingredients">식재료를 입력해주세요: </label>
       <input type="text" id="ingredients" name="ingredients">
       <input type="submit" value="레시피 보기">
     </form>
+    <img id="loading-image" src="{% static 'images/loading.gif' %}" style="display: none;">
   </div>
 </body>
 </html>
