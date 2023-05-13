@@ -4,7 +4,7 @@ import openai
 import random
 
 
-openai.api_key = "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" # "OPENAI_API_KEY"
+openai.api_key = "OPENAI_API_KEY"
 
 def recipe_generator(request):
     if request.method == 'POST':        
