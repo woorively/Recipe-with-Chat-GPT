@@ -3,6 +3,7 @@ from django.shortcuts import render
 import openai
 import random
 
+
 openai.api_key = "OPENAI_API_KEY"
 
 def recipe_generator(request):
