@@ -14,12 +14,27 @@
     </script>
 </head>
 <body>
+  <header class="my-4">
+    <h1 class="text-center font-bold">🥘 Recipe Generator</h1>
+  </header>
   <div class="container">
     <form method="POST" action="{% url 'recipe_generator' %}" onsubmit="showLoadingImage()">
       {% csrf_token %}
-      <label for="ingredients">식재료를 입력해주세요: </label>
-      <input type="text" id="ingredients" name="ingredients">
-      <input type="submit" value="레시피 보기">
+      <label for="ingredients" id="fridge">"오늘 뭐 해 먹지?!"</label>
+      <div>
+        <p>바쁜 일상 속,<br>어떤 음식을 만들어 먹을지 고민되시나요?
+          <br>오늘은 새로운 요리를 도전해보고 싶은가요?
+        </p>
+        <p>•••</p>
+        <p>고민하지 마세요!
+          <br>Recipe Generator가 레시피를 추천해드립니다.</p>
+      </div>
+      <div id="textbox-container">
+        <input type="text" id="ingredients" name="ingredients" placeholder="식재료를 입력해주세요.">
+      </div>
+      <div class="button-container">
+        <input type="submit" value="레시피 보기">
+      </div>
     </form>
     <img id="loading-image" src="{% static 'images/loading.gif' %}" style="display: none;">
   </div>
