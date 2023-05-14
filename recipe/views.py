@@ -25,3 +25,7 @@ def recipe_generator(request):
         return render(request, 'recipe.html', {'title': title, 'instructions': instructions, 'ingredients': lst})
 
     return render(request, 'index.html')
+
+
+def index(request):
+    return render(request, 'index.html')

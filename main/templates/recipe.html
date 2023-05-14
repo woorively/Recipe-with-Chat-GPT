@@ -10,6 +10,14 @@
 <body>
     <h2>{{ title }}</h2>
     <p>사용된 재료 : {{ ingredients|join:", " }}</p>
-    <pre>{{ instructions }}</pre>
+    <div class="container">
+      <div class="pre-container">
+        <pre>{{ instructions }}</pre>
+      </div>
+    </div>
+
+    <div class="btn-container">
+      <a href="index.html" class="btn">다시하기</a>
+    </div>
 </body>
 </html>

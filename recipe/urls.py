@@ -20,4 +20,5 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.recipe_generator, name='recipe_generator'),
+    path('index.html', views.index, name='index'),
 ]
